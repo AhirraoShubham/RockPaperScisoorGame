@@ -12,7 +12,8 @@ import {
   StyleSheet,
   View,
   Text,
-  Button
+  Button,
+  Linking
 } from 'react-native';
 import PlayGround from './PlayGround';
 
@@ -23,7 +24,7 @@ export default function App() {
     <PlayGround/>
   ):(
     <View style={styles.container}>
-    <Text style={styles.header}>Rock Paper Scissors</Text>
+    <Text style={styles.header}>Rock Paper Scissor</Text>
     <Text style={styles.emoji}>✊ ✋ ✌️</Text>
     <View style={styles.btnStyle}>
       <Button title='Play'
@@ -33,7 +34,11 @@ export default function App() {
       />
     </View>
     <Text style={styles.copyrighttext}>©Mr.Ahirrao</Text>
-    <Text style={styles.sorceCode}>SouceCode</Text>
+    <Text style={styles.sorceCode} 
+      onPress={()=>{
+        Linking.openURL('https://github.com/AhirraoShubham/RockPaperScisoorGame')
+      }
+    }>SouceCode</Text>
   </View>
   );
 };
